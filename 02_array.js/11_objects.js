@@ -4,4 +4,10 @@
 //const tinderUser = new Object(); // this is a singletom object
 const tinderUser = {} // this is non singleton object
 
+
+
 console.log(tinderUser);
+
+const instaUser = new Object();
+
+console.log(instaUser);
