@@ -43,7 +43,7 @@ const result = addTwoNumbers(3, 5)
 // console.log(loginUserMessage("Gautam"));
 
 //If Else statement
-function loginUserMessage(username){
+function loginUserMessage(username = "tu"){ // "Tu" => sams used bcoz of if the output value is not declare
     if(username === undefined){  // if(!username)
         console.log("Please Enter the username");
         return
@@ -51,4 +51,43 @@ function loginUserMessage(username){
     return `${username} login`
 }
 
-console.log(loginUserMessage());
+// console.log(loginUserMessage("Gautam"));
+
+
+
+// This use the function to calculate if the price is more then 1 and another price
+// (...num1) this is the rest operator and also spread operator both are same but usse the different place
+function calculateUser(val1, val2, ...num1) {
+    return num1;
+}
+
+// console.log(calculateUser(2, 5, 100, 200, 300));
+
+
+const user = {
+    username : "Guatam",
+    price: 199
+}
+
+function handleObject(anyobject){
+    console.log(`username is ${anyobject.username} and the price is ${anyobject.price}`);
+}
+
+// handleObject(user)
+
+// this is another type to declaration
+handleObject({
+    username : "Guatam",
+    price: 299
+})
+
+// This is The Array part which is decalre
+const myNewArray = [100,200,300,400]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+// console.log(returnSecondValue(myNewArray))
+console.log(returnSecondValue([100, 200, 500, 1000]));
+
