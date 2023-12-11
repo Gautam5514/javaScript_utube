@@ -34,7 +34,17 @@ map.set('IN', "India")
 
 // using loop
 for(const [key, value] of map) {
-    console.log(key, ':-', value);
+    // console.log(key, ':-', value);
 }
 
 //Object for each loop 
+const myObject = {
+    game1: 'NFS',
+    game2: 'BGMI'
+}
+
+// this is not work on that 
+// for(const [key, value] of myObject) {
+//     console.log(key,':-', value);
+// }
+
