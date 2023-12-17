@@ -88,7 +88,7 @@ console.log(instructor)
 // JSON -> JavaScript Object Notation
 // this type of type of javaScript JSON folder
 // {
-//     "name": "Guatam",
+//     "name": "Gautam",
 //     "coursename": "javaScript",
 //     "price": "not"
 // }
