@@ -1,4 +1,4 @@
-//In js the data calculated is always in the 1st jan 1970  And  the month will be start in 0 in JS
+// In js the data calculated is always in the 1st jan 1970  And  the month will be start in 0 in JS
 
 let myDate = new Date();
 // console.log(myDate.toString());
