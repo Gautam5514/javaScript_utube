@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Dom Learning</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <!-- //Dom is a documents object modal 
+    // html has two child 1. Head 2. body -->
+    <div >
+        <h1 id="title" class="heading">Dom learning on utube <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <input type="password" name="" id="">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, nobis.</p>
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+
+<!-- undefined
+list 
+NodeList(3) [li, li, li]
+list.style.color = 'green'
+VM6893:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:18
+(anonymous) @ VM6893:1
+list[0].style.color = 'green'
+'green'
+list[1].style.color = 'red'
+'red'
+list.style.color = 'purple'
+VM7242:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:18
+(anonymous) @ VM7242:1
+list[2].style.color = 'purple'
+'purple' 
+
+const list = document.querySelectorAll('li')
+undefined
+list[0].style.color = "red"
+'red'
+list
+NodeList(3) [li, li, li]
+list.forEach(function (li) { 
+    l.style.backgroundColor = 'green'
+    )}
+VM9954:3 Uncaught SyntaxError: Unexpected token ')'
+list.forEach(function (li) { 
+    l.style.backgroundColor = 'green'
+})
+VM9991:2 Uncaught ReferenceError: l is not defined
+    at <anonymous>:2:5
+    at NodeList.forEach (<anonymous>)
+    at <anonymous>:1:6
+(anonymous) @ VM9991:2
+(anonymous) @ VM9991:1
+list.forEach(function (l) { 
+    l.style.backgroundColor = 'green'
+})
+
+document.getElementsByClassName('list-item')
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: HTMLCollection
+const tempClassList = document.getElementsByClassName('list-item')
+undefined
+tempClassList
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+Array.from(tempClassList)
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+const myConvertedArray = Array.from(tempClassList)
+undefined
+myConvertedArray
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+myConvertedArray.forEach(function(li) {
+    li.style.color = 'red'
+})
+undefined
+myConvertedArray.forEach(function(ul) {
+    ul.style.color = 'green'
+})
+
+document.querySelectorAll('h2')
+NodeList(5) [h2.vector-pinnable-header-label, h2, h2, h2, h2]0: h2.vector-pinnable-header-label1: h2accessKey: ""align: ""ariaAtomic: nullariaAutoComplete: nullariaBrailleLabel: nullariaBrailleRoleDescription: nullariaBusy: nullariaChecked: nullariaColCount: nullariaColIndex: nullariaColSpan: nullariaCurrent: nullariaDescription: nullariaDisabled: nullariaExpanded: nullariaHasPopup: nullariaHidden: nullariaInvalid: nullariaKeyShortcuts: nullariaLabel: nullariaLevel: nullariaLive: nullariaModal: nullariaMultiLine: nullariaMultiSelectable: nullariaOrientation: nullariaPlaceholder: nullariaPosInSet: nullariaPressed: nullariaReadOnly: nullariaRelevant: nullariaRequired: nullariaRoleDescription: nullariaRowCount: nullariaRowIndex: nullariaRowSpan: nullariaSelected: nullariaSetSize: nullariaSort: nullariaValueMax: nullariaValueMin: nullariaValueNow: nullariaValueText: nullassignedSlot: nullattributeStyleMap: StylePropertyMap {size: 0}attributes: NamedNodeMap {length: 0}autocapitalize: ""autofocus: falsebaseURI: "https://en.wikipedia.org/wiki/Brendan_Eich#References"childElementCount: 2childNodes: NodeList(2) [span#Early_life.mw-headline, span.mw-editsection]children: HTMLCollection(2) [span#Early_life.mw-headline, span.mw-editsection, Early_life: span#Early_life.mw-headline]classList: DOMTokenList(0)length: 0value: ""[[Prototype]]: DOMTokenListclassName: ""clientHeight: 29clientLeft: 0clientTop: 0clientWidth: 417contentEditable: "inherit"dataset: DOMStringMap {}dir: ""draggable: falseeditContext: nullelementTiming: ""enterKeyHint: ""firstChild: span#Early_life.mw-headlinefirstElementChild: span#Early_life.mw-headlinehandwriting: truehidden: falseid: ""inert: falseinnerHTML: "<span class=\"mw-headline\" id=\"Early_life\">Early life</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a href=\"/w/index.php?title=Brendan_Eich&amp;action=edit&amp;section=1&amp;editintro=Template:BLP_editintro\" title=\"Edit section: Early life\"><span>edit</span></a><span class=\"mw-editsection-bracket\">]</span></span>"innerText: "Early life[edit]"inputMode: ""isConnected: trueisContentEditable: falselang: ""lastChild: span.mw-editsectionlastElementChild: span.mw-editsectionlocalName: "h2"namespaceURI: "http://www.w3.org/1999/xhtml"nextElementSibling: pnextSibling: textnodeName: "H2"nodeType: 1nodeValue: nullnonce: ""offsetHeight: 30offsetLeft: 0offsetParent: div#bodyContent.vector-body.ve-init-mw-desktopArticleTarget-targetContaineroffsetTop: 243offsetWidth: 417onabort: nullonanimationend: nullonanimationiteration: nullonanimationstart: nullonauxclick: nullonbeforecopy: nullonbeforecut: nullonbeforeinput: nullonbeforematch: nullonbeforepaste: nullonbeforetoggle: nullonbeforexrselect: nullonblur: nulloncancel: nulloncanplay: nulloncanplaythrough: nullonchange: nullonclick: nullonclose: nulloncontentvisibilityautostatechange: nulloncontextlost: nulloncontextmenu: nulloncontextrestored: nulloncopy: nulloncuechange: nulloncut: nullondblclick: nullondrag: nullondragend: nullondragenter: nullondragleave: nullondragover: nullondragstart: nullondrop: nullondurationchange: nullonemptied: nullonended: nullonerror: nullonfocus: nullonformdata: nullonfullscreenchange: nullonfullscreenerror: nullongotpointercapture: nulloninput: nulloninvalid: nullonkeydown: nullonkeypress: nullonkeyup: nullonload: nullonloadeddata: nullonloadedmetadata: nullonloadstart: nullonlostpointercapture: nullonmousedown: nullonmouseenter: nullonmouseleave: nullonmousemove: nullonmouseout: nullonmouseover: nullonmouseup: nullonmousewheel: nullonpaste: nullonpause: nullonplay: nullonplaying: nullonpointercancel: nullonpointerdown: nullonpointerenter: nullonpointerleave: nullonpointermove: nullonpointerout: nullonpointerover: nullonpointerrawupdate: nullonpointerup: nullonprogress: nullonratechange: nullonreset: nullonresize: nullonscroll: nullonscrollend: nullonsearch: nullonsecuritypolicyviolation: nullonseeked: nullonseeking: nullonselect: nullonselectionchange: nullonselectstart: nullonslotchange: nullonstalled: nullonsubmit: nullonsuspend: nullontimeupdate: nullontoggle: nullontransitioncancel: nullontransitionend: nullontransitionrun: nullontransitionstart: nullonvolumechange: nullonwaiting: nullonwebkitanimationend: nullonwebkitanimationiteration: nullonwebkitanimationstart: nullonwebkitfullscreenchange: nullonwebkitfullscreenerror: nullonwebkittransitionend: nullonwheel: nullouterHTML: "<h2><span class=\"mw-headline\" id=\"Early_life\">Early life</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a href=\"/w/index.php?title=Brendan_Eich&amp;action=edit&amp;section=1&amp;editintro=Template:BLP_editintro\" title=\"Edit section: Early life\"><span>edit</span></a><span class=\"mw-editsection-bracket\">]</span></span></h2>"outerText: "Early life[edit]"ownerDocument: documentparentElement: div.mw-content-ltr.mw-parser-outputparentNode: div.mw-content-ltr.mw-parser-outputpart: DOMTokenList [value: '']popover: nullprefix: nullpreviousElementSibling: metapreviousSibling: textrole: nullscrollHeight: 29scrollLeft: 0scrollTop: 0scrollWidth: 417shadowRoot: nullslot: ""spellcheck: truestyle: CSSStyleDeclaration {accentColor: '', additiveSymbols: '', alignContent: '', alignItems: '', alignSelf: '', …}tabIndex: -1tagName: "H2"textContent: "Early life[edit]"textprediction: truetitle: ""translate: truevirtualKeyboardPolicy: ""[[Prototype]]: HTMLHeadingElement(...)2: h23: h24: h2length: 5[[Prototype]]: NodeList
+const allH2 = document.querySelectorAll('h2')
+undefined
+allH2[0].innerText
+'Contents'
+allH2[1].innerText
+'Early life[edit]'
+allH2[2].innerText
+'Career[edit]'
+allH2[3].innerText
+'References[edit]'
+allH2[4].innerText
+'External links[edit]'
+document.querySelectorAll('mw-headline')
+NodeList []length: 0[[Prototype]]: NodeList
+document.querySelectorAll("mw-headline")
+NodeList []
+document.querySelectorAll(".mw-headline")
+NodeList(8) [span#Early_life.mw-headline, span#Career.mw-headline, span#Netscape.mw-headline, span#Mozilla.mw-headline, span#Appointment_to_CEO_and_resignation.mw-headline, span#Brave_Software.mw-headline, span#References.mw-headline, span#External_links.mw-headline]0: span#Early_life.mw-headline1: span#Career.mw-headline2: span#Netscape.mw-headline3: span#Mozilla.mw-headline4: span#Appointment_to_CEO_and_resignation.mw-headline5: span#Brave_Software.mw-headline6: span#References.mw-headline7: span#External_links.mw-headlinelength: 8[[Prototype]]: NodeList
+const myH2 = document.querySelectorAll('.mw-headline')
+undefined
+myH2[0].innerText
+'Early life'
+myH2.forEach(function(g) {
+    g.style.color = 'red'
+})
+undefined
+myH2.forEach(function(g) {
+    g.style.color = 'black'
+})
+undefined
+myH2.forEach(function(g) {
+    g.style.color = 'black'
+    g.style.backgroundColor = 
+})
+VM8782:4 Uncaught SyntaxError: Unexpected token '}'
+myH2.forEach(function(g) {
+    g.style.color = 'black'
+    g.style.backgroundColor = 'green'
+    g.style.padding = '10px'
+})
+undefined
+myH2.forEach(function(g) {
+    g.style.color = 'black'
+    g.style.backgroundColor = 'green'
+    g.style.padding = '10px';
+})
+undefined
+myH2.forEach(function(g) {
+    g.style.color = 'black'
+    g.style.backgroundColor = 'green'
+    g.style.padding = '10px';
+})
+undefined
+myH2.forEach(function(g) {
+    g.style.color = 'black'
+    g.style.backgroundColor = 'green'
+    g.style.padding = '10px';
+    g.innerText = "Gautam"
+})
+
+-->
+    </div>
+</body>
+</html>
