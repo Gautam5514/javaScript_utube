@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color:black; color:white">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"  
+                    src="https://i.pinimg.com/564x/03/b6/55/03b655c0827461b65aa62a33acd2a40f.jpg" alt="photoshop"></li>
+                    <!-- <li><img width="200px" id="photoshop"  
+                        src="https://i.pinimg.com/564x/03/b6/55/03b655c0827461b65aa62a33acd2a40f.jpg" alt="photoshop" onclick="alert('king')"></li>  this  is not a scalable approch  -->
+            <li><img width="200px" id="japan" src="https://i.pinimg.com/564x/ee/fe/7e/eefe7ebdbe6b5c028a1ac34a195423e0.jpg" 
+                alt=""></li>
+                <li><img width="200px" id="river" src="https://i.pinimg.com/564x/26/4c/fb/264cfb70830f224803f7369a05a3de40.jpg" alt=""></li>
+                <li><img width="200px" id="owl"src="https://i.pinimg.com/564x/47/14/4b/47144be735f48cdf694b9b0a724272e9.jpg" alt=""></li>
+                <li><img width="200px" id="owl"src="https://i.pinimg.com/564x/d0/7b/51/d07b51aa1fbd871620c804e602ac2a29.jpg" alt=""></li>
+                <li><img width="200px" src="https://i.pinimg.com/564x/5a/89/0d/5a890d37dd4754fc9e8a6f0e142ce7f8.jpg" alt=""></li>
+                <li><a style="color:aliceblue" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // javaSCript is a sequeantially run language
+
+    // attachEvent -> this is also the use of onclick function but this is old version
+    //JQuery - on  -> thsi is also use for the use of event listeners
+
+    // document.getElementById('owl').onclick = function() {
+    //     alert ("owl hai a nhi nhi pata hamko ")
+    // }  this is not a futurastic function this is less of functinality so we use evenlistner
+
+        // document.getElementById('owl').addEventListener('click', function() {
+        //     alert("click krte rho sikho mat")
+        // })  -> this is used for the trends modal for the onclick function
+
+        // type - keybord mause ,  timestamp - date activity how change, defaultPrevented -> we change the 
+        //veraiable  , target, toElement, currentTarget, clientX, clientX, clientY, screenX, screenY, altkey, 
+        //ctrlkey, shiftkey,  keycode -> must raed this is interview prosopective important
+
+            // use of false this is event bubbling  //=> event propogation that is inner to outer
+        
+
+
+
+        // document.getElementById('images').addEventListener('click', function(a) {
+        //     console.log("sim sim khul ja");
+        // })
+
+        // document.getElementById('owl').addEventListener('click', function(a) {
+        //     console.log("fir se khul ja sim sim");
+        //     a.stopPropagation(); // this is stop the bubbling 
+        // })
+
+        // document.getElementById('google').addEventListener('click', function(a) {
+        //     a.preventDefault();// this is start the prevention
+        //     a.stopPropagation();// this is close the prevention
+        //     console.log("google clicked");
+        // }, false);
+
+
+        // document.getElementById('images').addEventListener('click', function(a) {
+        //     console.log(a.target.parentNode);
+        //     let removeIt = a.target.parentNode
+        //     removeIt.remove();  
+        // }) -> this is the delete from the target, try something new
+        
+        // 2. remove method -> removeIt.parentNode.removeChild(removeIt)
+        
+
+        document.getElementById('images').addEventListener('click', function(a){
+            console.log(a.target.tagName);
+            if(a.target.tagName === 'IMG') {
+                console.log(a.target.id);
+                let removeIt = a.target.parentNode
+                removeIt.remove();
+            }
+        })
+</script>
+</html>
