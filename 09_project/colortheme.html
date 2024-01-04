@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Theme</title>
+    <style>
+        * {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        h1 {
+            padding: 10px;
+            margin: 10px;
+            font-family: "Helvetica Neue", Helvet;
+            font-style: italic;
+        }
+
+        #start,
+        #stop {
+            padding: 10px;
+            margin: 10px;
+            font-family: "Helvetica Neue", Helvet;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body style="background-color: black; color: white">
+    <h1>Start should change the Background color</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // this  is for the random color finding using Math.Random
+    const randomColor = function () {
+        const hex = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }; 
+    // firstly one scope variable initlize out
+    let intervalId;
+    // firstly initalize the startChanging function
+    const startChangingColor = function () {
+        if (!intervalId) {
+            intervalId = setInterval(changeBgColor, 1000);
+        }
+
+        // This is for the find the random color and display the output
+        function changeBgColor() {
+            document.body.style.backgroundColor = randomColor();
+        }
+
+    };
+    // This is the stop to change the color
+    const stopChangingColor = function () {
+        clearInterval(intervalId);
+        intervalId = null;
+    };
+    // This is the command of the buuton
+    document.querySelector('#start').addEventListener('click', startChangingColor);
+    document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+</script>
+
+</html>

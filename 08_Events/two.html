@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1>Laern From Me</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function() {
+    //     console.log("Gautam tu Meri jaan hai")
+    // }, 2000) // -> this work is to set a time execute one a time and then do nothing
+
+
+    const heyGauatm = function(){
+        console.log("Hey man you are gautam");
+    }
+    setTimeout(heyGauatm, 2000); // both of the samw work
+
+    const change  = function() {
+        document.querySelector('h1').innerHTML = "Hey you are reading my content";
+    }
+    const chnageMe = setTimeout( change,2000)
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearTimeout(chnageMe); // this is for the clear of timeout 
+        console.log("STOPPED");
+    })
+
+</script>
+</html>
