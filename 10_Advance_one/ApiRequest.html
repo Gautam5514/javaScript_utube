@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Information</title>
+</head>
+<body style="background-color:#212121; color:white ">
+    <div id="user-info">
+        <div id="profile-container">
+            <img id="profile-image" src="" alt="Profile Image">
+        </div>
+        <p id="follower-count"></p>
+    </div>
+    <button onclick="showUserInfo()">About My Information</button>
+
+    <script>
+        function showUserInfo() {
+            const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', requestUrl);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    const data = JSON.parse(this.responseText);
+                    console.log(data);
+
+                    // Display profile image
+                    const profileImage = document.getElementById('profile-image');
+                    profileImage.src = data.avatar_url; // GitHub user's profile image
+
+                    // Display follower count
+                    const followerCount = document.getElementById('follower-count');
+                    followerCount.textContent = `Followers: ${data.followers}`;
+                }
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
+
+// console.log() -> has not a part of js it's all are the debuging tool of brower tool, it's all inject of run //ime

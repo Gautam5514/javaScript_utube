@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Followers</title>
+</head>
+<body style="background-color:#212121">
+    <div id="follower-card-container"></div>
+    <button onclick="getFollowerPhotos()">Get Follower Photos</button>
+
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText);
+                console.log(typeof data);
+
+                // Check if data.followers is an array
+                if (typeof data.followers === 'number') {
+                    console.log('Number of followers:', data.followers);
+
+                    // Fetch the actual list of followers
+                    fetchFollowersList(data.followers);
+                } else {
+                    console.error('Followers data is not a number:', data.followers);
+                }
+            }
+        }
+        xhr.send();
+
+        function fetchFollowersList(followerCount) {
+            // Simulate fetching the actual list of followers (replace with actual implementation)
+            const followerList = [];
+
+            // Simulating followers data
+            for (let i = 0; i < followerCount; i++) {
+                followerList.push({
+                    login: `Follower${i + 1}`,
+                    // Add any other relevant information about the follower
+                });
+            }
+
+            // Simulating follower cards creation
+            const followerCardContainer = document.getElementById('follower-card-container');
+            for (const follower of followerList) {
+                const card = document.createElement('div');
+                card.innerText = follower.login; // Display follower username (you can customize this)
+
+                // Simulating a profile image (replace with actual profile image URL)
+                const profileImage = document.createElement('img');
+                profileImage.src = 'https://via.placeholder.com/150'; // Placeholder image URL
+
+                card.appendChild(profileImage);
+                followerCardContainer.appendChild(card);
+            }
+        }
+
+        function getFollowerPhotos() {
+            // Simulating fetching follower photos (replace with actual implementation)
+            const followerCardContainer = document.getElementById('follower-card-container');
+            const followerCards = followerCardContainer.querySelectorAll('div');
+            followerCards.forEach((card, index) => {
+                // Simulating a photo URL (replace with actual photo URL)
+                const photoUrl = `https://via.placeholder.com/150?text=Photo${index + 1}`;
+                const photo = document.createElement('img');
+                photo.src = photoUrl;
+                card.appendChild(photo);
+            });
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Information</title>
+</head>
+<body style="background-color:#212121">
+    <div id="user-info">
+        <div id="profile-container">
+            <img id="profile-image" src="" alt="Profile Image">
+        </div>
+        <p id="follower-count"></p>
+    </div>
+    <button onclick="getFollowerPhotos()">Get Follower Photos</button>
+
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText);
+                console.log(data);
+
+                // Display profile image
+                const profileImage = document.getElementById('profile-image');
+                profileImage.src = data.avatar_url; // GitHub user's profile image
+
+                // Display follower count
+                const followerCount = document.getElementById('follower-count');
+                followerCount.textContent = `Followers: ${data.followers}`;
+            }
+        }
+        xhr.send();
+
+        function getFollowerPhotos() {
+            // Simulating fetching follower photos (replace with actual implementation)
+            const followerCardContainer = document.getElementById('user-info');
+            const followerCount = document.getElementById('follower-count').textContent;
+            
+            // Simulating follower photos
+            for (let i = 0; i < parseInt(followerCount.split(': ')[1]); i++) {
+                const photoUrl = `https://via.placeholder.com/150?text=Follower${i + 1}`;
+                <!-- const photo = document.createElement('img');
+            //     photo.src = photoUrl;
+            //     followerCardContainer.appendChild(photo);
+            // } -->
+        } -->
+    </script>
+</body>
+</html>
